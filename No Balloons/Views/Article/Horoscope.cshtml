@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Horoscope";
+    Layout = "~/Views/Shared/_ArticleLayout.cshtml";
+}
+<head>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<h2 class="horoscopeHeading">Horoscopes</h2>
+<br />
+@foreach (var item in Model)
+{
+    <h2>@item.Sign</h2>
+    <h4>@item.Message</h4>
+    <hr class="article-line-break">
+    <br />
+}

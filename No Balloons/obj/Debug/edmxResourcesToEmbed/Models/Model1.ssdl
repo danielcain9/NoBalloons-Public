@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NoBalloonsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="Link" />
+    </Key>
+    <Property Name="Title" Type="varchar(max)" Nullable="false" />
+    <Property Name="Author" Type="varchar(max)" Nullable="false" />
+    <Property Name="Content" Type="varchar(max)" Nullable="false" />
+    <Property Name="ArticleDate" Type="date" Nullable="false" />
+    <Property Name="Image" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Summary" Type="varchar(max)" Nullable="false" />
+    <Property Name="Main" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Link" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Horoscope">
+    <Key>
+      <PropertyRef Name="Sign" />
+    </Key>
+    <Property Name="Sign" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Message" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="NoBalloonsModelStoreContainer">
+    <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Horoscope" EntityType="Self.Horoscope" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

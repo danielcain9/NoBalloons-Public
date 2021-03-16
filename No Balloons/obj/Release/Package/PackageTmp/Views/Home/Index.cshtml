@@ -1,0 +1,83 @@
+﻿@model IEnumerable<No_Balloons.Models.Article>
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<head>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<div class="all">
+    <div class="left">
+
+        @foreach (var obj in Model)
+        {
+            if (obj.Main == "1")
+            {
+                <article class="main-article">
+                    <a href="/Article/Article?title=@obj.Link" class="article-title-link" target="_blank">
+                        <h2 class="main-article-title" -title>
+                            @obj.Title
+                        </h2>
+                    </a>
+                    <a href="/Article/Article?title=@obj.Link" target="_blank">
+                        <img class="main-article-image" src="/Content/Images/@obj.Image" />
+                    </a>
+                    <h4> @obj.Summary </h4>
+                    <br />
+                    <h6>@obj.ArticleDate</h6>
+
+                </article>
+            }
+            else
+            {
+                <article class="sub-article">
+                    <div class="sub-article-left">
+                        <a href="/Article/Article?title=@obj.Link" class="article-title-link" target="_blank">
+                            <img class="sub-article-image" src="/Content/Images/@obj.Image" />
+                        </a>
+                    </div>
+                    <div class="sub-article-right">
+                        <h2 class="sub-article-title">
+                            <a href="/Article/Article?title=@obj.Link" class="article-title-link" target="_blank">
+                                @obj.Title
+                            </a>
+                        </h2>
+                    </div>
+                </article>
+            }
+            <hr class="article-line-break">
+        }
+    </div>
+    <div class="right">
+        <div class="sub-right">
+            <h2>Weather</h2>
+            <hr class="article-line-break" />
+            @if (ViewBag.Weather != null)
+            {
+                <h4>@ViewBag.Weather.City, @ViewBag.Weather.Country</h4>
+                <img src="@ViewBag.Weather.WeatherIcon" />
+                <h4>Description: @ViewBag.Weather.Description</h4>
+                <h4>Temp: @ViewBag.Weather.Temp</h4>
+                <h4>Min: @ViewBag.Weather.TempMin °C</h4>
+                <h4>Max: @ViewBag.Weather.TempMax °C</h4>                
+            }
+            else
+            {
+                <h4>No weather details for your city or ip address</h4>
+            }
+        </div>
+        <a href="/Article/Horoscope" class="article-title-link" target="_blank">
+            <div class="sub-right">
+                <h2>Horrorscopes</h2>
+                <hr class="article-line-break" />
+
+                <h4>Get your horoscope now!</h4>
+                <img src="/Content/Images/star-signs.jpg" class="sub-article-image"/>
+            </div>
+        </a>
+    </div>
+</div>

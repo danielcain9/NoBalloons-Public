@@ -1,0 +1,210 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+
+.all {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.article-holder {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    font-family: arial,sans-serif;
+}
+
+.left {
+    width: 70%;
+}
+
+.right {
+    width: 30%;
+    padding: 2em;
+    margin: 2em;
+}
+
+.main-article {
+    padding: 2em;
+    margin: 2em;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.main-article-title {
+    font-weight: bold;
+    justify-content: center;
+}
+
+.main-article-image {
+    max-width: 100%;
+}
+
+.article-image {
+    max-width: 100%;
+}
+
+.div-article-image {
+    display: flex;
+    justify-content: center;
+}
+
+.article-title {
+    text-align: center;
+}
+
+.sub-article {
+    display: flex;
+    align-items: center;
+}
+
+.sub-article-left {
+    flex-basis: 25%;
+    padding-right: 1em;
+    margin-right: 1em;
+}
+
+.sub-article-right {
+    flex-basis: 75%;
+    align-content: center;
+}
+
+.sub-article-image {
+    max-width: 100%;
+}
+
+hr.article-line-break {
+    border-color: darkgray;
+    border-width: 2px;
+    max-width: 100%;
+}
+
+.navigation {
+    text-decoration: none;
+    margin: 1em;
+}
+
+.navigation-title {
+    font-size: x-large;
+}
+
+.navigation-ul li {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.navigation-ul li a {
+        color: lightgray;
+}
+
+.navSearch {
+    padding-top: 1em;
+    margin-right: 1em;
+    color: black;
+    float: right;
+}
+
+.navDate {
+    padding-top: 1em;
+    margin-right: 1em;
+    color: white;
+    float: right;
+}
+
+.article-title-link {
+    color: inherit;
+}
+
+    .article-title-link:hover {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+.sub-right {
+    background-color: #d9dbdc;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #333333;
+    margin-top: 2em;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+footer {
+    justify-content: center;
+    display: flex;
+}
+
+.horoscopeHeading {
+    justify-content: center;
+    display: flex;
+}
+
+@media screen and (max-width: 500px) {
+    .right {
+        display: none;
+    }
+
+    .main-article-image {
+        width: 100%;
+    }
+
+    .left {
+        width: 100%;
+        margin-top: 2em;
+    }
+
+    .main-article h2 {
+        font-size: smaller;
+    }
+
+    .navigation {
+        display: inline;
+    }
+
+    .navSearch {
+        float: none;
+    }
+
+    .navDate{
+        float:none;
+    }
+
+    .body-content{
+        margin-top:2em;
+    }
+
+    .horoscopeHeading {
+        margin-top: 3em;
+    }
+}

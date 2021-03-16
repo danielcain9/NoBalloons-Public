@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NoBalloonsModelStoreContainer" CdmEntityContainer="NoBalloonsEntities">
+    <EntitySetMapping Name="Articles">
+      <EntityTypeMapping TypeName="NoBalloonsModel.Article">
+        <MappingFragment StoreEntitySet="Article">
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="ArticleDate" ColumnName="ArticleDate" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="Main" ColumnName="Main" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Horoscopes">
+      <EntityTypeMapping TypeName="NoBalloonsModel.Horoscope">
+        <MappingFragment StoreEntitySet="Horoscope">
+          <ScalarProperty Name="Sign" ColumnName="Sign" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

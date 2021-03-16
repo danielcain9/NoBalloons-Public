@@ -1,0 +1,61 @@
+﻿@model No_Balloons.Models.Article
+@{
+    ViewBag.Title = "Article";
+    Layout = "~/Views/Shared/_ArticleLayout.cshtml";
+}
+<head>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<div class="all">
+    <div class="left">
+        <article class="article-holder">
+            <h1 class="article-title">
+                @Model.Title
+            </h1>
+            <br />
+            <br />
+            <div class="div-article-image">
+                <img class="article-image" src="/Content/Images/@Model.Image" />
+            </div>
+
+            <br />
+            <br />
+            <h4>
+                @Html.Raw(@Model.Content)
+
+            </h4>
+            <br />
+            <h4>
+                @Model.Author
+            </h4>
+            <h5>
+                @Model.ArticleDate
+            </h5>
+        </article>
+    </div>
+    <div class="right">
+       
+        @foreach (var item in ViewBag.Articles)
+        {
+            if (item.Link != Model.Link)
+            {
+                <article class="sub-article">
+                    <div class="sub-article-left">
+                        <a href="/Article/Article?title=@item.Link" class="article-title-link" target="_blank">
+                            <img class="sub-article-image" src="/Content/Images/@item.Image" />
+                        </a>
+                    </div>
+                    <div class="sub-article-right">
+                        <h4 class="sub-article-title">
+                            <a href="/Article/Article?title=@item.Link" class="article-title-link" target="_blank">
+                                @item.Title
+                            </a>
+                        </h4>
+                    </div>
+                </article>
+                <hr class="article-line-break">
+                <br />
+            }
+        }
+    </div>
+</div>

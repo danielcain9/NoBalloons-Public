@@ -1,0 +1,15 @@
+﻿@model IEnumerable<No_Balloons.Models.Article>
+
+
+@using (Html.BeginForm("SearchArticles", "Home", FormMethod.Post, new { role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { })   
+        <li>
+            @Html.TextBoxFor(model => model.ElementAt(0).Title, new {  @placeholder = " ", @style = "margin:auto", @Value = "" })
+            @Html.ValidationMessageFor(model => model.ElementAt(0).Title)
+        </li>
+        <li><button  type="submit">Search Article</button></li>
+        
+}

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - No Balloons</title>
+    @Styles.Render("/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">           
+            <div class="navigation">
+                <ul class="navigation-ul">
+                    <li class="navigation-title">@Html.ActionLink("No Balloons", "Index", "Home", new { area = "" }, new { })</li>
+                    <li>
+                        <a href="/Home/Index">
+                            <img src="~/Content/Images/balloons2.png" width="50" height="50" />
+                        </a>
+                    </li>
+                    <li>@Html.ActionLink("Horoscopes", "Horoscope", "Article")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    
+                    <li class="navDate">
+                        <script type="text/javascript">
+
+                            var m_names = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+                            var d_names = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+
+                            var currentTime = new Date()
+                            var day = currentTime.getDay()
+                            var month = currentTime.getMonth() + 1
+                            var date = currentTime.getDate()
+                            var year = currentTime.getFullYear()
+                            document.write(d_names[day] + ", " + date + " " + m_names[month] + " " + year + ", ")
+                            var currentTime = new Date()
+                            var hours = currentTime.getHours()
+                            var minutes = currentTime.getMinutes()
+                            if (minutes < 10) {
+                                minutes = "0" + minutes
+                            }
+                            document.write(hours + ":" + minutes + " ")
+                            if (hours > 11) {
+                                document.write("PM")
+                            } else {
+                                document.write("AM")
+                            }
+                        </script>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="body-container-article">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Johnny has no balloons</p>
+            </footer>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
